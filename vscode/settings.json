@@ -30,22 +30,11 @@
     // ファイルプレビューは無効化(開かれたファイルタブを永続化)
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    // macrosプラグインを使って、ファイルを開くと同時にサイドバーを閉じるコマンドを登録
-    "macros": {
-        "selectAndToggleSidebar": [
-            "list.select",
-            "workbench.action.toggleSidebarVisibility"
-        ],
-        "selectAndFocusExplorer": [
-            "list.select",
-            "workbench.explorer.fileView.focus"
-        ],
-    },
-    // LSP
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
+    // formatter
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.trailingComma": "all",
+    "prettier.tabWidth": 4
 }

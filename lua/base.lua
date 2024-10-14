@@ -7,6 +7,11 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.undofile = true -- Save undo history
 vim.opt.ignorecase = true -- 小文字のみで検索したとき大文字にもヒット
 vim.opt.smartcase = true
