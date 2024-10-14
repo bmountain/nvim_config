@@ -1,0 +1,139 @@
+[
+    // editor
+    // editor: close tab
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "!terminalFocus && !sideBarFocus"
+    },
+    // editor: next tab
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.nextEditor",
+        "when": "!terminalFocus && !sideBarFocus && neovim.mode != insert",
+    },
+    // editor: previous tab
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.previousEditor",
+        "when": "!terminalFocus && !sideBarFocus && neovim.mode != insert",
+    },
+
+    // file explorer
+    // explorer: toggle
+    {
+        "key": "ctrl+e",
+        "command": "workbench.explorer.fileView.focus",
+        "when": "!filesExplorerFocus && neovim.mode != insert"
+    },
+     {
+        "key": "ctrl+e",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "filesExplorerFocus && neovim.mode != insert"
+    }, 
+    // explorer: open
+    {
+        "key": "Enter",
+        "command": "macros.selectAndToggleSidebar",
+        "when": "explorerViewletFocus && explorerViewletVisible && !explorerResourceIsFolder && !inputFocus"
+    },
+    // explorer: move
+    {
+        "key": "Enter",
+        "command": "list.toggleExpand",
+        "when": "explorerViewletFocus && explorerViewletVisible && explorerResourceIsFolder && !inputFocus"
+    },
+    // explorer: rename
+    {
+        "key": "m r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    // explorer: copy
+    {
+        "key": "m c",
+        "command": "filesExplorer.copy",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    // explorer: paste
+    {
+        "key": "m p",
+        "command": "filesExplorer.paste",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    // explorer: new file
+    {
+        "key": "m a",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    // explorer: delete file
+    {
+        "key": "m d",
+        "command": "deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    // explorer: new folder
+    {
+        "key": "m f",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    
+    // search
+    {
+        "key": "ctrl+s",
+        "command": "workbench.view.search.focus",
+        "when": "!searchViewletVisible"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "searchViewletVisible"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarFocus"
+    },
+
+    // bottom panel
+    // panel(bottombar): focus
+    {
+        "key": "ctrl+j",
+        "command": "terminal.focus"
+    },
+    // terminal: focus editor
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    // panel(bottombar): toggle
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.togglePanel",
+    },
+    // terminal: split
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    // terminal: kill
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+]

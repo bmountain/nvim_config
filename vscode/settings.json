@@ -1,0 +1,51 @@
+{
+    // 不明
+    "liveServer.settings.donotShowInfoMsg": true,
+
+    // 基本設定
+    "workbench.startupEditor": "none",
+    "editor.lineNumbers": "relative",
+    "workbench.editor.empty.hint": "hidden",
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "window.menuBarVisibility": "compact",
+    "workbench.layoutControl.enabled": false,
+
+    // terminal
+    "terminal.external.windowsExec": "C:\\Program Files\\Git\\git-bash.exe",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+
+    // vscode-neovim
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\nvim-win64\\bin\\nvim.exe",
+    "vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\aoyam\\AppData\\Local\\vscode_nvim\\init.lua",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vscode-neovim.compositeKeys": {
+        "jj": {
+            "command": "vscode-neovim.escape",
+            "args": []
+        }
+    },
+    // ファイルプレビューは無効化(開かれたファイルタブを永続化)
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    // macrosプラグインを使って、ファイルを開くと同時にサイドバーを閉じるコマンドを登録
+    "macros": {
+        "selectAndToggleSidebar": [
+            "list.select",
+            "workbench.action.toggleSidebarVisibility"
+        ],
+        "selectAndFocusExplorer": [
+            "list.select",
+            "workbench.explorer.fileView.focus"
+        ],
+    },
+    // LSP
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+}
