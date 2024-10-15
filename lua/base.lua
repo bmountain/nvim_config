@@ -1,4 +1,5 @@
 -- 基本設定
+vim.opt.shellcmdflag = '-c'
 vim.opt.shortmess = 'I' -- 起動時のメッセージを消す
 vim.cmd 'language en_US' -- 言語を英語に
 
