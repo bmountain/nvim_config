@@ -36,10 +36,5 @@
     "editor.formatOnPaste": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.trailingComma": "all",
-    // vscode-neovim
-    "vscode-neovim.compositeKeys": {
-        "jj": {
-            "command": "vscode-neovim.escape"
-        }
-    }   "prettier.tabWidth": 4
+    "prettier.tabWidth": 4
 }

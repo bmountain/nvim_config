@@ -1,4 +1,52 @@
 [
+    // emacs keybind in insert mode
+    {
+        "key": "ctrl+p",
+        "command": "cursorUp",
+        "when": "editorFocus && neovim.mode == insert && editorHasCompletionItemProvider"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "cursorDown",
+        "when": "editorFocus && neovim.mode == insert && editorHasCompletionItemProvider"
+    },
+
+    {
+        "key": "ctrl+a",
+        "command": "cursorHome",
+        "when": "editorFocus && neovim.mode == insert"
+    },
+
+    {
+        "key": "ctrl+e",
+        "command": "cursorEnd",
+        "when": "editorFocus && neovim.mode == insert"
+    },
+
+    {
+        "key": "ctrl+f",
+        "command": "cursorRight",
+        "when": "editorFocus && neovim.mode == insert"
+    },
+
+    {
+        "key": "ctrl+b",
+        "command": "cursorLeft",
+        "when": "editorFocus && neovim.mode == insert"
+    },
+
+    {
+        "key": "ctrl+h",
+        "command": "deleteLeft",
+        "when": "editorFocus && neovim.mode == insert"
+    },
+
+    {
+        "key": "ctrl+k",
+        "command": "deleteAllRight",
+        "when": "editorFocus && neovim.mode == insert"
+    },
+
     // editor
     // editor: close tab
     {
@@ -48,38 +96,43 @@
     },
     // explorer: rename
     {
-        "key": "m r",
+        "key": "r",
         "command": "renameFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     // explorer: copy
     {
-        "key": "m c",
+        "key": "c",
         "command": "filesExplorer.copy",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     // explorer: paste
     {
-        "key": "m p",
+        "key": "p",
         "command": "filesExplorer.paste",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     // explorer: new file
     {
-        "key": "m a",
+        "key": "a",
         "command": "explorer.newFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     // explorer: delete file
     {
-        "key": "m d",
+        "key": "d",
         "command": "deleteFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     // explorer: new folder
     {
-        "key": "m f",
+        "key": "A",
         "command": "explorer.newFolder",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "v",
+        "command": "explorer.openToSide",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
 
