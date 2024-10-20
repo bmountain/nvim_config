@@ -1,14 +1,32 @@
 [
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen",
+        "when": "neovim.mode == normal"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.files.newUntitledFile",
+        "when": "neovim.mode != insert"
+    },
     // emacs keybind in insert mode
     {
         "key": "ctrl+p",
         "command": "cursorUp",
-        "when": "editorFocus && neovim.mode == insert && editorHasCompletionItemProvider"
+        "when": "editorFocus && neovim.mode == insert && !editorHasCompletionItemProvider"
     },
     {
         "key": "ctrl+n",
         "command": "cursorDown",
-        "when": "editorFocus && neovim.mode == insert && editorHasCompletionItemProvider"
+        "when": "editorFocus && neovim.mode == insert && !editorHasCompletionItemProvider"
     },
 
     {
@@ -52,7 +70,7 @@
     {
         "key": "ctrl+w",
         "command": "workbench.action.closeActiveEditor",
-        "when": "!terminalFocus && !sideBarFocus"
+        "when": "!terminalFocus && !sideBarFocus && !neovim.mode == insert"
     },
     // editor: next tab
     {
@@ -77,7 +95,7 @@
     {
         "key": "ctrl+e",
         "command": "workbench.explorer.fileView.focus",
-        "when": "!filesExplorerFocus && neovim.mode != insert"
+        "when": "neovim.mode != insert"
     },
     {
         "key": "ctrl+e",
@@ -114,7 +132,7 @@
     },
     // explorer: new file
     {
-        "key": "a",
+        "key": "f",
         "command": "explorer.newFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
@@ -126,7 +144,7 @@
     },
     // explorer: new folder
     {
-        "key": "A",
+        "key": "a",
         "command": "explorer.newFolder",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
