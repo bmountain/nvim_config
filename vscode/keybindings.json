@@ -1,4 +1,5 @@
 [
+    // emacs keybind in insert mode
     {
         "key": "ctrl+p",
         "command": "-workbench.action.quickOpen"
@@ -6,7 +7,17 @@
     {
         "key": "ctrl+p",
         "command": "workbench.action.quickOpen",
-        "when": "neovim.mode == normal"
+        "when": "editorFocus && neovim.mode = normal"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "cursorUp",
+        "when": "editorFocus && neovim.mode == insert && !suggestWidgetVisible"
     },
     {
         "key": "ctrl+n",
@@ -14,21 +25,9 @@
     },
     {
         "key": "ctrl+n",
-        "command": "workbench.action.files.newUntitledFile",
-        "when": "neovim.mode != insert"
-    },
-    // emacs keybind in insert mode
-    {
-        "key": "ctrl+p",
-        "command": "cursorUp",
-        "when": "editorFocus && neovim.mode == insert && !editorHasCompletionItemProvider"
-    },
-    {
-        "key": "ctrl+n",
         "command": "cursorDown",
-        "when": "editorFocus && neovim.mode == insert && !editorHasCompletionItemProvider"
+        "when": "editorFocus && neovim.mode == insert && !suggestWidgetVisible && !terminalFocus"
     },
-
     {
         "key": "ctrl+a",
         "command": "cursorHome",
@@ -69,38 +68,36 @@
     // editor: close tab
     {
         "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
         "command": "workbench.action.closeActiveEditor",
         "when": "!terminalFocus && !sideBarFocus && !neovim.mode == insert"
     },
     // editor: next tab
     {
-        "key": "ctrl+l",
+        "key": "ctrl+shift+l",
         "command": "workbench.action.nextEditor",
         "when": "!terminalFocus && !sideBarFocus && neovim.mode != insert"
     },
     // editor: previous tab
     {
-        "key": "ctrl+h",
+        "key": "ctrl+shift+h",
         "command": "workbench.action.previousEditor",
         "when": "!terminalFocus && !sideBarFocus && neovim.mode != insert"
-    },
-
-    {
-        "key": "ctrl+a",
-        "command": "workbench.action.toggleActivityBarVisibility",
-        "when": "neovim.mode != insert"
     },
     // file explorer
     // explorer: toggle
     {
         "key": "ctrl+e",
         "command": "workbench.explorer.fileView.focus",
-        "when": "neovim.mode != insert"
+        "when": "editorTextFocus && neovim.mode == normal"
     },
     {
         "key": "ctrl+e",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "filesExplorerFocus && neovim.mode != insert"
+        "when": "filesExplorerFocus"
     },
     {
         "key": "Enter",
@@ -153,60 +150,47 @@
         "command": "explorer.openToSide",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
-
-    // search
     {
-        "key": "ctrl+s",
-        "command": "workbench.view.search.focus",
-        "when": "!searchViewletVisible"
-    },
-    {
-        "key": "ctrl+s",
-        "command": "workbench.action.toggleSidebarVisibility",
-        "when": "searchViewletVisible"
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
     },
     {
         "key": "ctrl+w",
-        "command": "workbench.action.toggleSidebarVisibility",
-        "when": "sideBarFocus"
+        "command": "workbench.action.closeActiveEditor",
+        "when": "editorFocus && neovim.mode == normal"
     },
 
     // bottom panel
     // panel(bottombar): focus
     {
-        "key": "ctrl+j",
+        "key": "ctrl+shift+j",
         "command": "terminal.focus"
     },
     // terminal: focus editor
     {
-        "key": "ctrl+k",
+        "key": "ctrl+shift+k",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus"
     },
-    // panel(bottombar): toggle
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.togglePanel"
-    },
     // terminal: split
     {
-        "key": "ctrl+n",
+        "key": "ctrl+shift+n",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+l",
+        "key": "ctrl+shift+l",
         "command": "workbench.action.terminal.focusNextPane",
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+h",
+        "key": "ctrl+shift+h",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
     },
     // terminal: kill
     {
-        "key": "ctrl+w",
+        "key": "ctrl+shift+w",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
@@ -214,5 +198,9 @@
         "key": "ctrl+m",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "panelFocus"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "-workbench.action.newWindow"
     }
 ]

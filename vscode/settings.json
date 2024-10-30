@@ -36,5 +36,11 @@
     "editor.formatOnPaste": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.trailingComma": "all",
-    "prettier.tabWidth": 4
+    "prettier.tabWidth": 4,
+    "editor.glyphMargin": true,
+    "remote.SSH.remotePlatform": {
+        "ubuntu": "linux"
+    },
+    "window.restoreWindows": "none",
+    "terminal.integrated.commandsToSkipShell": ["-workbench.action.quickOpen"]
 }
