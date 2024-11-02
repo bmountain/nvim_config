@@ -12,12 +12,10 @@
     "workbench.layoutControl.enabled": false,
 
     // terminal
-    "terminal.external.windowsExec": "C:\\Program Files\\Git\\git-bash.exe",
     "terminal.integrated.defaultProfile.windows": "Git Bash",
 
     // vscode-neovim
     "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\nvim-win64\\bin\\nvim.exe",
-    "vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\aoyam\\AppData\\Local\\vscode_nvim\\init.lua",
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
