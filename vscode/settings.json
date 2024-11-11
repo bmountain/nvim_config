@@ -1,46 +1,63 @@
 {
-    // 不明
-    "liveServer.settings.donotShowInfoMsg": true,
-
-    // 基本設定
+    // basic
     "workbench.startupEditor": "none",
-    "editor.lineNumbers": "relative",
     "workbench.editor.empty.hint": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "window.menuBarVisibility": "compact",
+    "window.customMenuBarAltFocus": false,
+    "window.restoreWindows": "none",
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
-    "window.menuBarVisibility": "compact",
-    "workbench.layoutControl.enabled": false,
+    "editor.lineNumbers": "relative",
+    "editor.glyphMargin": true,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "zenMode.hideLineNumbers": false,
+    "files.saveConflictResolution": "overwriteFileOnDisk",
 
     // terminal
-    "terminal.external.windowsExec": "C:\\Program Files\\Git\\git-bash.exe",
+    "terminal.external.windowsExec": "C:\\your\\path\\to\\git-bash.exe",
     "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen",
+        "workbench.action.closePanel",
+        "workbench.action.fileView.focus",
+        "workbench.action.toggleSidebarVisibility",
+        "workbenchaction.terminal.new",
+        "workbenchaction.terminal.split",
+        "workbenchaction.terminal.focusNextPane",
+        "workbenchaction.terminal.focusPreviousPane"
+    ],
 
     // vscode-neovim
-    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\nvim-win64\\bin\\nvim.exe",
-    "vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\aoyam\\AppData\\Local\\vscode_nvim\\init.lua",
+
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\your\\path\\to\\neovim.exe",
+    "vscode-neovim.neovimInitVimPaths.win32": "C:\\your\\path\\to\\init.lua",
+    // performance improvement
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "vscode-neovim.compositeKeys": {
-        "jj": {
-            "command": "vscode-neovim.escape",
-            "args": []
-        }
-    },
+    // run without plugins
+    "vscode-neovim.neovimClean": true,
+
     // ファイルプレビューは無効化(開かれたファイルタブを永続化)
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+
     // formatter
     "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.formatOnPaste": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": null,
+    // prettier
     "prettier.trailingComma": "all",
     "prettier.tabWidth": 4,
-    "editor.glyphMargin": true,
-    "remote.SSH.remotePlatform": {
-        "ubuntu": "linux"
+    // python
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
     },
-    "window.restoreWindows": "none",
-    "terminal.integrated.commandsToSkipShell": ["-workbench.action.quickOpen"]
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
