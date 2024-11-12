@@ -15,7 +15,6 @@
     "files.saveConflictResolution": "overwriteFileOnDisk",
 
     // terminal
-    "terminal.external.windowsExec": "C:\\your\\path\\to\\git-bash.exe",
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.integrated.commandsToSkipShell": [
         "-workbench.action.quickOpen",
@@ -29,9 +28,7 @@
     ],
 
     // vscode-neovim
-
-    "vscode-neovim.neovimExecutablePaths.win32": "C:\\your\\path\\to\\neovim.exe",
-    "vscode-neovim.neovimInitVimPaths.win32": "C:\\your\\path\\to\\init.lua",
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\nvim-win64\\bin\\nvim.exe",
     // performance improvement
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
