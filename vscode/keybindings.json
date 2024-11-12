@@ -139,26 +139,26 @@
 
     // file explorer
     {
-        // focus in editor
+        // focus from editor
         "key": "alt+e",
         "command": "workbench.explorer.fileView.focus",
         "when": "editorTextFocus && neovim.mode == normal"
     },
     {
-        // toggle in editor
+        // toggle
         "key": "alt+e",
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "filesExplorerFocus"
     },
     {
-        // focus in panel
+        // focus from panel
         // see terminal.integrated.commandsToSkipShell in settings.json
         "key": "alt+e",
         "command": "workbench.explorer.fileView.focus",
         "when": "panelFocus"
     },
     {
-        // toggle in panel
+        // toggle from panel
         // see terminal.integrated.commandsToSkipShell in settings.json
         "key": "alt+e",
         "command": "workbench.action.toggleSidebarVisibility",
@@ -251,22 +251,29 @@
         "key": "ctrl+shift+space",
         "command": "workbench.action.togglePanel"
     },
-    // terminal: kill
     {
+        // terminal: kill
         "key": "alt+shift+w",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
     {
+        // toggle maximize panel
         "key": "alt+m",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "panelFocus"
     },
 
-    // other
+    // quick open
     {
         // disable quick open
         "key": "ctrl+e",
         "command": "-workbench.action.quickOpen"
+    },
+    {
+        // open to side
+        "key": "ctrl+Enter",
+        "command": "search.action.openResultToSide",
+        "when": "inQuickOpen"
     }
 ]

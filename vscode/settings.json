@@ -15,6 +15,7 @@
     "files.saveConflictResolution": "overwriteFileOnDisk",
 
     // terminal
+    "terminal.external.windowsExec": "C:\\Program Files\\Git\\git-bash.exe",
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.integrated.commandsToSkipShell": [
         "-workbench.action.quickOpen",
@@ -28,13 +29,15 @@
     ],
 
     // vscode-neovim
-    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\nvim-win64\\bin\\nvim.exe",
+
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\your\\path\\to\\nvim.exe",
+    "vscode-neovim.neovimInitVimPaths.win32": "C:\\your\\path\\to\\init.lua",
     // performance improvement
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
     // run without plugins
-    "vscode-neovim.neovimClean": true,
+    "vscode-neovim.neovimClean": false,
 
     // ファイルプレビューは無効化(開かれたファイルタブを永続化)
     "workbench.editor.enablePreview": false,
