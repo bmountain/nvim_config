@@ -8,14 +8,18 @@
     },
     {
         // quick open in normal mode
-        "key": "ctrl+p",
-        "command": "workbench.action.quickOpen",
-        "when": "editorTextFocus && neovim.mode == normal"
+        "key": "alt+p",
+        "command": "workbench.action.quickOpen"
     },
     {
         // privious item in quick open
         "key": "ctrl+p",
         "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenNavigateNext",
         "when": "inQuickOpen"
     },
     {
@@ -66,6 +70,12 @@
         "when": "editorTextFocus && neovim.mode == insert"
     },
     {
+        // delete right
+        "key": "ctrl+d",
+        "command": "deleteRight",
+        "when": "editorTextFocus && neovim.mode == insert"
+    },
+    {
         // delete all right
         "key": "ctrl+k",
         "command": "deleteAllRight",
@@ -94,8 +104,7 @@
     {
         // close editor
         "key": "alt+w",
-        "command": "workbench.action.closeActiveEditor",
-        "when": "editorTextFocus && neovim.mode == normal"
+        "command": "workbench.action.closeActiveEditor"
     },
     {
         // close side bar
@@ -116,13 +125,12 @@
         // next tab
         "key": "alt+l",
         "command": "workbench.action.nextEditor",
-        "when": "editorTextFocus && neovim.mode == normal"
+        "when": "editorFocus && neovim.mode != insert"
     },
     {
         // disable help
         "key": "alt+h",
-        "command": "-editor.action.accessibilityHelpOpenHelpLink",
-        "when": "accessibilityHelpIsShown"
+        "command": "-editor.action.accessibilityHelpOpenHelpLink"
     },
     {
         // disable isPeekVisible
@@ -134,7 +142,7 @@
         // editor: previous tab
         "key": "alt+h",
         "command": "workbench.action.previousEditor",
-        "when": "editorTextFocus && neovim.mode == normal"
+        "when": "editorFocus && neovim.mode != insert"
     },
 
     // file explorer
@@ -202,7 +210,7 @@
     },
     {
         // open to side
-        "key": "ctrl+Enter",
+        "key": "alt+Enter",
         "command": "explorer.openToSide",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
@@ -248,10 +256,6 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+shift+space",
-        "command": "workbench.action.togglePanel"
-    },
-    {
         // terminal: kill
         "key": "alt+shift+w",
         "command": "workbench.action.terminal.kill",
@@ -272,8 +276,18 @@
     },
     {
         // open to side
-        "key": "ctrl+Enter",
+        "key": "alt+Enter",
         "command": "search.action.openResultToSide",
         "when": "inQuickOpen"
+    },
+    {
+        // disable show commands
+        "key": "ctrl+shift+p",
+        "command": "-workbench.action.showCommands"
+    },
+    {
+        // show commands
+        "key": "alt+shift+p",
+        "command": "workbench.action.showCommands"
     }
 ]
