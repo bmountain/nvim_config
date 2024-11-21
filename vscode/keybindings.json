@@ -8,7 +8,7 @@
     },
     {
         // quick open in normal mode
-        "key": "alt+p",
+        "key": "ctrl+p",
         "command": "workbench.action.quickOpen"
     },
     {
@@ -18,6 +18,7 @@
         "when": "inQuickOpen"
     },
     {
+        // next item in quick open
         "key": "ctrl+n",
         "command": "workbench.action.quickOpenNavigateNext",
         "when": "inQuickOpen"
@@ -32,6 +33,12 @@
         // disable new file
         "key": "ctrl+n",
         "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        // new file in normal mode
+        "key": "ctrl+n",
+        "command": "workbench.action.files.newUntitledFile",
+        "when": "editorFocus && neovim.mode == normal"
     },
     {
         // cusor down in insert mode
@@ -85,37 +92,20 @@
     // close
 
     {
-        // disalbe close tab
-        "key": "ctrl+w",
-        "command": "-workbench.action.closeActiveEditor"
-    },
-    {
-        // disable toggle find whole word
-        "key": "alt+w",
-        "command": "-toggleFindWholeWord",
-        "when": "editorFocus"
-    },
-    {
-        // disable toggle search whole word
-        "key": "alt+w",
-        "command": "-toggleSearchWholeWord",
-        "when": "searchViewletFocus"
-    },
-    {
         // close editor
-        "key": "alt+w",
+        "key": "ctrl+w",
         "command": "workbench.action.closeActiveEditor"
     },
     {
         // close side bar
-        "key": "alt+w",
+        "key": "ctrl+w",
         "command": "workbench.action.closeSidebar",
         "when": "sideBarFocus"
     },
     {
         // close panel
         // see terminal.integrated.commandsToSkipShell in settings.json
-        "key": "alt+w",
+        "key": "ctrl+w",
         "command": "workbench.action.closePanel",
         "when": "panelFocus"
     },
@@ -123,24 +113,13 @@
     // focus
     {
         // next tab
-        "key": "alt+l",
+        "key": "ctrl+l",
         "command": "workbench.action.nextEditor",
         "when": "editorFocus && neovim.mode != insert"
     },
     {
-        // disable help
-        "key": "alt+h",
-        "command": "-editor.action.accessibilityHelpOpenHelpLink"
-    },
-    {
-        // disable isPeekVisible
-        "key": "alt+h",
-        "command": "-testing.toggleTestingPeekHistory",
-        "when": "testing.isPeekVisible"
-    },
-    {
         // editor: previous tab
-        "key": "alt+h",
+        "key": "ctrl+h",
         "command": "workbench.action.previousEditor",
         "when": "editorFocus && neovim.mode != insert"
     },
@@ -148,27 +127,27 @@
     // file explorer
     {
         // focus from editor
-        "key": "alt+e",
+        "key": "ctrl+e",
         "command": "workbench.explorer.fileView.focus",
-        "when": "editorTextFocus && neovim.mode == normal"
+        "when": "editorFocus && neovim.mode == normal"
     },
     {
         // toggle
-        "key": "alt+e",
+        "key": "ctrl+e",
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "filesExplorerFocus"
     },
     {
         // focus from panel
         // see terminal.integrated.commandsToSkipShell in settings.json
-        "key": "alt+e",
+        "key": "ctrl+e",
         "command": "workbench.explorer.fileView.focus",
         "when": "panelFocus"
     },
     {
         // toggle from panel
         // see terminal.integrated.commandsToSkipShell in settings.json
-        "key": "alt+e",
+        "key": "ctrl+e",
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "panelFocus"
     },
@@ -208,62 +187,62 @@
         "command": "explorer.newFolder",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
-    {
-        // open to side
-        "key": "alt+Enter",
-        "command": "explorer.openToSide",
-        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-    },
+    // {
+    //     // open to side
+    //     "key": "ctrl+Enter",
+    //     "command": "explorer.openToSide",
+    //     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    // },
 
     // terminal
 
     {
         // terminal focus
-        "key": "alt+j",
+        "key": "ctrl+j",
         "command": "terminal.focus",
-        "when": "editorTextFocus"
+        "when": "editorFocus && neovim.mode == normal"
     },
     {
         // editor focus
-        "key": "alt+k",
+        "key": "ctrl+k",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus"
     },
     {
         // new terminal
         // see terminal.integrated.commandsToSkipShell
-        "key": "alt+n",
+        "key": "ctrl+n",
         "command": "workbench.action.terminal.new",
         "when": "terminalFocus"
     },
     {
         // new terminal to side
         // see terminal.integrated.commandsToSkipShell
-        "key": "alt+v",
+        "key": "ctrl+v",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
     },
     {
         // focus next
-        "key": "alt+l",
+        "key": "ctrl+l",
         "command": "workbench.action.terminal.focusNext",
         "when": "terminalFocus"
     },
     {
         // focus previous
-        "key": "alt+h",
+        "key": "ctrl+h",
         "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalFocus"
     },
     {
         // terminal: kill
-        "key": "alt+shift+w",
+        "key": "ctrl+shift+w",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
     {
         // toggle maximize panel
-        "key": "alt+m",
+        "key": "ctrl+m",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "panelFocus"
     },
@@ -276,18 +255,8 @@
     },
     {
         // open to side
-        "key": "alt+Enter",
+        "key": "ctrl+Enter",
         "command": "search.action.openResultToSide",
         "when": "inQuickOpen"
-    },
-    {
-        // disable show commands
-        "key": "ctrl+shift+p",
-        "command": "-workbench.action.showCommands"
-    },
-    {
-        // show commands
-        "key": "alt+shift+p",
-        "command": "workbench.action.showCommands"
     }
 ]
