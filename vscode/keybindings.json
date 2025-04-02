@@ -102,13 +102,13 @@
         "command": "workbench.action.closeSidebar",
         "when": "sideBarFocus"
     },
-    {
+    // {
         // close panel
         // see terminal.integrated.commandsToSkipShell in settings.json
-        "key": "ctrl+w",
-        "command": "workbench.action.closePanel",
-        "when": "panelFocus"
-    },
+    //     "key": "ctrl+w",
+    //     "command": "workbench.action.closePanel",
+    //     "when": "panelFocus"
+    // },
 
     // focus
     {
@@ -137,20 +137,20 @@
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "filesExplorerFocus"
     },
-    {
+    // {
         // focus from panel
         // see terminal.integrated.commandsToSkipShell in settings.json
-        "key": "ctrl+e",
-        "command": "workbench.explorer.fileView.focus",
-        "when": "panelFocus"
-    },
-    {
+        // "key": "ctrl+e",
+        // "command": "workbench.explorer.fileView.focus",
+        // "when": "panelFocus"
+    // },
+    // {
         // toggle from panel
         // see terminal.integrated.commandsToSkipShell in settings.json
-        "key": "ctrl+e",
-        "command": "workbench.action.toggleSidebarVisibility",
-        "when": "panelFocus"
-    },
+    //     "key": "ctrl+e",
+    //     "command": "workbench.action.toggleSidebarVisibility",
+    //     "when": "panelFocus"
+    // },
     {
         // explorer: rename
         "key": "r",
@@ -195,19 +195,6 @@
     // },
 
     // terminal
-
-    {
-        // terminal focus
-        "key": "ctrl+j",
-        "command": "terminal.focus",
-        "when": "editorFocus && neovim.mode == normal"
-    },
-    {
-        // editor focus
-        "key": "ctrl+k",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus"
-    },
     {
         // new terminal
         // see terminal.integrated.commandsToSkipShell
@@ -220,18 +207,6 @@
         // see terminal.integrated.commandsToSkipShell
         "key": "ctrl+v",
         "command": "workbench.action.terminal.split",
-        "when": "terminalFocus"
-    },
-    {
-        // focus next
-        "key": "ctrl+l",
-        "command": "workbench.action.terminal.focusNext",
-        "when": "terminalFocus"
-    },
-    {
-        // focus previous
-        "key": "ctrl+h",
-        "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalFocus"
     },
     {
@@ -258,5 +233,30 @@
         "key": "ctrl+Enter",
         "command": "search.action.openResultToSide",
         "when": "inQuickOpen"
-    }
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    
+    // focus
+    { //disable zoom out
+        "key": "ctrl+oem_minus",
+        "command": "-workbench.action.zoomOut"
+    },
+    { // disable zoom in
+        "key": "ctrl+oem_plus",
+        "command": "-workbench.action.zoomIn"
+    },
+    { // terminal Focus
+        "key": "ctrl+oem_plus",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+oem_plus",
+        "command": "terminal.focus",
+        "when": "editorFocus && neovim.mode == normal"
+    },
 ]
+
